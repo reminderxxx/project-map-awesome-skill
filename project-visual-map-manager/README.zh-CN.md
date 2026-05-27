@@ -2,6 +2,108 @@
 
 `project-visual-map-manager` 是一个可复用的 Codex Skill，用于为任意软件项目生成可视化项目地图。它会同时输出适合 AI 和开发者快速阅读的 Markdown 项目结构说明，以及可以直接双击打开的单文件 HTML 可视化地图。
 
+## 推荐集成方式
+
+推荐把 `project-visual-map-manager/` 放进目标项目根目录。这样项目会自带地图生成能力，开发者和 AI 都能直接运行。
+
+### 方法 1：让 AI 通过 GitHub 拉取并融入项目
+
+把下面这段话发给 AI：
+
+```text
+请把 project-visual-map-manager 集成到当前项目。
+
+来源仓库：
+https://github.com/reminderxxx/project-map-awesome-skill.git
+
+要求：
+1. 当前工作目录是目标项目根目录。
+2. 把来源仓库 clone 到临时目录，不要 clone 到当前项目里。
+3. 只复制 project-visual-map-manager/ 目录到当前项目根目录。
+4. 不要复制来源仓库的 .git 目录和外层生成文件。
+5. 集成后运行：
+   powershell -ExecutionPolicy Bypass -File project-visual-map-manager/run-project-map.ps1 -Root . -NoOpen
+6. 生成后读取 PROJECT_STRUCTURE.md，后续新增、删除、移动、重命名文件后重新运行地图生成器。
+```
+
+更完整的 AI 指令见仓库根目录的 `AI-INTEGRATION.md`。
+
+### 方法 2：PowerShell 一键集成
+
+如果你已经拿到了本仓库根目录的 `install-project-map.ps1`，在目标项目根目录运行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File install-project-map.ps1 -RepoUrl https://github.com/reminderxxx/project-map-awesome-skill.git
+```
+
+只安装 Skill，不立即生成地图：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File install-project-map.ps1 -NoRun
+```
+
+目标项目里已经存在 `project-visual-map-manager/`，需要覆盖更新：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File install-project-map.ps1 -Force
+```
+
+常用参数：
+
+- `-RepoUrl`：Skill 来源仓库，默认是 `https://github.com/reminderxxx/project-map-awesome-skill.git`。
+- `-TargetRoot`：目标项目根目录，默认是当前目录。
+- `-Force`：目标项目已有 `project-visual-map-manager/` 时覆盖。
+- `-NoRun`：只复制 Skill，不生成地图。
+- `-NoOpen`：生成地图但不自动打开 HTML。
+
+### 方法 3：项目内日常运行
+
+当目标项目已经包含 `project-visual-map-manager/` 后，直接双击：
+
+```text
+project-visual-map-manager/run-project-map.bat
+```
+
+或在 PowerShell 中运行：
+
+```powershell
+.\project-visual-map-manager\run-project-map.ps1
+```
+
+## 一键使用
+
+普通 Windows 用户推荐使用一键脚本。
+
+如果 `project-visual-map-manager` 目录就在目标项目中，直接双击：
+
+```text
+project-visual-map-manager/run-project-map.bat
+```
+
+脚本会自动完成三件事：
+
+1. 扫描当前项目。
+2. 生成或更新 `PROJECT_STRUCTURE.md`、`PROJECT_MAP.html`、`.project-map-cache.json`。
+3. 用默认浏览器打开 `PROJECT_MAP.html`。
+
+也可以在 PowerShell 中运行：
+
+```powershell
+.\project-visual-map-manager\run-project-map.ps1
+```
+
+PowerShell 入口支持参数：
+
+```powershell
+.\project-visual-map-manager\run-project-map.ps1 -Root . -Lang zh -MaxDepth 8
+```
+
+只生成文件、不自动打开浏览器：
+
+```powershell
+.\project-visual-map-manager\run-project-map.ps1 -Root . -NoOpen
+```
+
 ## 作用
 
 这个 Skill 适合在以下场景使用：
@@ -22,12 +124,18 @@
 也可以不安装，直接在当前仓库中运行脚本：
 
 ```bash
-python project-visual-map-manager/scripts/update_project_map.py --root .
+python project-visual-map-manager/scripts/update_project_map.py --root . --open
 ```
 
 ## 基本使用
 
-在目标项目根目录运行：
+推荐方式是在目标项目根目录运行一键入口：
+
+```powershell
+.\project-visual-map-manager\run-project-map.ps1
+```
+
+如果需要直接调用 Python 脚本，运行：
 
 ```bash
 python path/to/project-visual-map-manager/scripts/update_project_map.py --root .
@@ -37,6 +145,12 @@ python path/to/project-visual-map-manager/scripts/update_project_map.py --root .
 
 ```bash
 python project-visual-map-manager/scripts/update_project_map.py --root .
+```
+
+生成完成后自动打开 HTML：
+
+```bash
+python project-visual-map-manager/scripts/update_project_map.py --root . --open
 ```
 
 运行后会在目标项目根目录生成或更新：
@@ -88,6 +202,7 @@ python project-visual-map-manager/scripts/update_project_map.py \
 - `--output-md`：指定 Markdown 项目结构说明输出路径，默认是 `<root>/PROJECT_STRUCTURE.md`。
 - `--max-depth`：限制目录扫描深度。
 - `--include-hidden`：包含隐藏文件和目录，但仍会忽略默认排除项。
+- `--open`：生成完成后用系统默认浏览器打开 `PROJECT_MAP.html`。
 - `--watch`：预留参数，目前只执行一次更新。
 
 ## 输出文件说明

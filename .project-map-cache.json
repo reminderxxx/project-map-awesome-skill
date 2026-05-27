@@ -1,8 +1,38 @@
 {
   "project_name": "project-map-awesome-skill",
-  "updated_at": "2026-05-27T14:09:37+08:00",
+  "updated_at": "2026-05-27T14:58:37+08:00",
   "language": "zh",
   "files": {
+    "AI-INTEGRATION.md": {
+      "path": "AI-INTEGRATION.md",
+      "hash": "87824df5fefa369a982fd446af9a0d774169790f2fb968acf5e58247572b3d8b",
+      "summary": "AI Integration Guide",
+      "type": "Markdown",
+      "module": "root",
+      "imports": [],
+      "declarations": [],
+      "exports": [],
+      "dependencies": [],
+      "referenced_by": [],
+      "routes": [],
+      "config_keys": [],
+      "last_analyzed": "2026-05-27T14:58:37+08:00"
+    },
+    "install-project-map.ps1": {
+      "path": "install-project-map.ps1",
+      "hash": "62d554463899e961496c9f349c0fd95bdae218851ff043713176f09c6cbc608e",
+      "summary": "提供项目使用的 PowerShell 内容。",
+      "type": "PowerShell",
+      "module": "root",
+      "imports": [],
+      "declarations": [],
+      "exports": [],
+      "dependencies": [],
+      "referenced_by": [],
+      "routes": [],
+      "config_keys": [],
+      "last_analyzed": "2026-05-27T14:58:37+08:00"
+    },
     "project-visual-map-manager/README.md": {
       "path": "project-visual-map-manager/README.md",
       "hash": "40c91abf19d5de3906ab556f5e867bac6258cb8171525d74bce6bc85d03dad59",
@@ -16,11 +46,11 @@
       "referenced_by": [],
       "routes": [],
       "config_keys": [],
-      "last_analyzed": "2026-05-27T14:09:37+08:00"
+      "last_analyzed": "2026-05-27T14:58:37+08:00"
     },
     "project-visual-map-manager/README.zh-CN.md": {
       "path": "project-visual-map-manager/README.zh-CN.md",
-      "hash": "243f80641ae5f4a550dd821fd406e5b98930cccf26348ba157cfc26e1153e4e4",
+      "hash": "51057f958292f5af82ee74c2b6757d4dda75264ec20dcf395e2054f9b6c5aacd",
       "summary": "project-visual-map-manager 中文说明",
       "type": "README",
       "module": "project-visual-map-manager",
@@ -31,7 +61,37 @@
       "referenced_by": [],
       "routes": [],
       "config_keys": [],
-      "last_analyzed": "2026-05-27T14:09:37+08:00"
+      "last_analyzed": "2026-05-27T14:58:37+08:00"
+    },
+    "project-visual-map-manager/run-project-map.bat": {
+      "path": "project-visual-map-manager/run-project-map.bat",
+      "hash": "fe86b10d23ebae0800fab50be8e327124ed4ec561143713154f9689a819ceb4e",
+      "summary": "提供项目使用的 Windows batch 内容。",
+      "type": "Windows batch",
+      "module": "project-visual-map-manager",
+      "imports": [],
+      "declarations": [],
+      "exports": [],
+      "dependencies": [],
+      "referenced_by": [],
+      "routes": [],
+      "config_keys": [],
+      "last_analyzed": "2026-05-27T14:58:37+08:00"
+    },
+    "project-visual-map-manager/run-project-map.ps1": {
+      "path": "project-visual-map-manager/run-project-map.ps1",
+      "hash": "a56199dcc4c15d0b71bb20f61267365dfa6e00bcd5b9afcc075ad25af14fdb43",
+      "summary": "提供项目使用的 PowerShell 内容。",
+      "type": "PowerShell",
+      "module": "project-visual-map-manager",
+      "imports": [],
+      "declarations": [],
+      "exports": [],
+      "dependencies": [],
+      "referenced_by": [],
+      "routes": [],
+      "config_keys": [],
+      "last_analyzed": "2026-05-27T14:58:37+08:00"
     },
     "project-visual-map-manager/scripts/config.example.json": {
       "path": "project-visual-map-manager/scripts/config.example.json",
@@ -54,11 +114,11 @@
         "include_hidden",
         "ignore"
       ],
-      "last_analyzed": "2026-05-27T14:09:37+08:00"
+      "last_analyzed": "2026-05-27T14:58:37+08:00"
     },
     "project-visual-map-manager/scripts/update_project_map.py": {
       "path": "project-visual-map-manager/scripts/update_project_map.py",
-      "hash": "840e66e3c69f730a769344cd2cc3531fe36980db57e783e0c4bed906fba939ec",
+      "hash": "cdb2d0450e2d5092c18557a672014c3b8ef3c42643c352a4cf8f728231218154",
       "summary": "定义 Path, 文件路径 等路由或 API 行为。",
       "type": "Python",
       "module": "project-visual-map-manager",
@@ -71,6 +131,7 @@
         "json",
         "os",
         "re",
+        "webbrowser",
         "__future__",
         "pathlib",
         "typing"
@@ -205,11 +266,11 @@
         "文件路径"
       ],
       "config_keys": [],
-      "last_analyzed": "2026-05-27T14:09:37+08:00"
+      "last_analyzed": "2026-05-27T14:58:37+08:00"
     },
     "project-visual-map-manager/SKILL.md": {
       "path": "project-visual-map-manager/SKILL.md",
-      "hash": "0256d181056d23600c6addf72fe6784328a74682eb0123cb93cdb667c2a9e4e5",
+      "hash": "fd3b54c66d1831310f4cf907c7709e4f22fcd7db0c6f9d055e803db345771f5a",
       "summary": "Project Visual Map Manager",
       "type": "Markdown",
       "module": "project-visual-map-manager",
@@ -220,7 +281,7 @@
       "referenced_by": [],
       "routes": [],
       "config_keys": [],
-      "last_analyzed": "2026-05-27T14:09:37+08:00"
+      "last_analyzed": "2026-05-27T14:58:37+08:00"
     },
     "project-visual-map-manager/templates/PROJECT_MAP.template.html": {
       "path": "project-visual-map-manager/templates/PROJECT_MAP.template.html",
@@ -235,7 +296,7 @@
       "referenced_by": [],
       "routes": [],
       "config_keys": [],
-      "last_analyzed": "2026-05-27T14:09:37+08:00"
+      "last_analyzed": "2026-05-27T14:58:37+08:00"
     },
     "project-visual-map-manager/templates/PROJECT_STRUCTURE.template.md": {
       "path": "project-visual-map-manager/templates/PROJECT_STRUCTURE.template.md",
@@ -250,7 +311,7 @@
       "referenced_by": [],
       "routes": [],
       "config_keys": [],
-      "last_analyzed": "2026-05-27T14:09:37+08:00"
+      "last_analyzed": "2026-05-27T14:58:37+08:00"
     }
   }
 }

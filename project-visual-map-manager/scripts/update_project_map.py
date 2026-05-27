@@ -15,6 +15,7 @@ import html
 import json
 import os
 import re
+import webbrowser
 from pathlib import Path
 from typing import Any
 
@@ -71,7 +72,9 @@ TEXT_EXTENSIONS = {
     ".less",
     ".md",
     ".mjs",
+    ".bat",
     ".php",
+    ".ps1",
     ".properties",
     ".py",
     ".rb",
@@ -125,6 +128,8 @@ EXTENSION_TYPES = {
     ".xml": "XML config",
     ".sql": "SQL",
     ".md": "Markdown",
+    ".bat": "Windows batch",
+    ".ps1": "PowerShell",
     ".sh": "Shell",
 }
 
@@ -1142,6 +1147,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-depth", type=int, default=None, help="Maximum directory traversal depth.")
     parser.add_argument("--include-hidden", action="store_true", help="Include hidden files except default ignored paths.")
     parser.add_argument("--watch", action="store_true", help="Reserved for future watch mode; currently runs once.")
+    parser.add_argument("--open", action="store_true", help="Open the generated HTML map with the system default browser.")
     return parser.parse_args()
 
 
@@ -1157,6 +1163,9 @@ def main() -> int:
     print(f"Updated {output_md}")
     print(f"Updated {output_html}")
     print(f"Updated {root / '.project-map-cache.json'}")
+    if args.open:
+        webbrowser.open(output_html.as_uri())
+        print(f"Opened {output_html}")
     if args.watch:
         print("--watch is reserved for future use; completed one update.")
     return 0

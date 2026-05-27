@@ -7,15 +7,42 @@ description: Generate and update reusable visual project maps for software repos
 
 Use this skill when a project needs an AI-readable structure summary and a developer-friendly visual map.
 
+## Project Integration
+
+Prefer project-local integration when adding this skill to another repository:
+
+1. Clone `https://github.com/reminderxxx/project-map-awesome-skill.git` into a temporary directory.
+2. Copy only `project-visual-map-manager/` into the target project root.
+3. Do not copy the source repository `.git` directory or outer generated files.
+4. Generate the map from the target project root:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File project-visual-map-manager/run-project-map.ps1 -Root . -NoOpen
+```
+
+If PowerShell is unavailable, run:
+
+```bash
+python project-visual-map-manager/scripts/update_project_map.py --root .
+```
+
+When working from this repository, see `AI-INTEGRATION.md` for a copy-paste prompt that another AI agent can use to pull the skill from GitHub and integrate it into a target project.
+
 ## Required Workflow
 
 1. Before modifying a mapped project, read `PROJECT_STRUCTURE.md` first if it exists.
 2. Use `PROJECT_MAP.html` data when file relationships, module ownership, or dependency direction matter.
 3. After adding, deleting, moving, renaming, or materially changing files, rerun the map generator.
-4. Prefer the bundled script over hand-written summaries:
+4. Prefer the bundled scripts over hand-written summaries:
 
 ```bash
 python project-visual-map-manager/scripts/update_project_map.py --root .
+```
+
+For Windows project-local usage, prefer:
+
+```powershell
+.\project-visual-map-manager\run-project-map.ps1 -Root . -NoOpen
 ```
 
 If the skill is installed outside the target repository, run the script from its installed path and pass the target repository with `--root`.
@@ -56,6 +83,7 @@ The HTML is a single file with embedded CSS, JavaScript, and project data. It ca
 - `--output-md`: Markdown output path. Defaults to `<root>/PROJECT_STRUCTURE.md`.
 - `--max-depth`: maximum directory traversal depth.
 - `--include-hidden`: include hidden files and directories except default ignored paths.
+- `--open`: open the generated HTML map with the system default browser.
 - `--watch`: reserved flag for future watch mode; currently performs one update and exits.
 
 ## Language Selection
