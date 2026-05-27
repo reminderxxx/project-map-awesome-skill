@@ -1,0 +1,32 @@
+{
+  "root": ".",
+  "lang": "auto",
+  "output_html": "PROJECT_MAP.html",
+  "output_md": "PROJECT_STRUCTURE.md",
+  "max_depth": 8,
+  "include_hidden": false,
+  "ignore": [
+    ".git",
+    "node_modules",
+    "dist",
+    "build",
+    "coverage",
+    ".next",
+    ".nuxt",
+    ".vite",
+    "target",
+    "out",
+    "bin",
+    "obj",
+    "__pycache__",
+    ".venv",
+    "env",
+    ".idea",
+    ".vscode",
+    ".DS_Store",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock",
+    "*.log"
+  ]
+}

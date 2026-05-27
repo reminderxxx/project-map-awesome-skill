@@ -1,0 +1,256 @@
+{
+  "project_name": "project-map-awesome-skill",
+  "updated_at": "2026-05-27T14:09:37+08:00",
+  "language": "zh",
+  "files": {
+    "project-visual-map-manager/README.md": {
+      "path": "project-visual-map-manager/README.md",
+      "hash": "40c91abf19d5de3906ab556f5e867bac6258cb8171525d74bce6bc85d03dad59",
+      "summary": "project-visual-map-manager",
+      "type": "README",
+      "module": "project-visual-map-manager",
+      "imports": [],
+      "declarations": [],
+      "exports": [],
+      "dependencies": [],
+      "referenced_by": [],
+      "routes": [],
+      "config_keys": [],
+      "last_analyzed": "2026-05-27T14:09:37+08:00"
+    },
+    "project-visual-map-manager/README.zh-CN.md": {
+      "path": "project-visual-map-manager/README.zh-CN.md",
+      "hash": "243f80641ae5f4a550dd821fd406e5b98930cccf26348ba157cfc26e1153e4e4",
+      "summary": "project-visual-map-manager 中文说明",
+      "type": "README",
+      "module": "project-visual-map-manager",
+      "imports": [],
+      "declarations": [],
+      "exports": [],
+      "dependencies": [],
+      "referenced_by": [],
+      "routes": [],
+      "config_keys": [],
+      "last_analyzed": "2026-05-27T14:09:37+08:00"
+    },
+    "project-visual-map-manager/scripts/config.example.json": {
+      "path": "project-visual-map-manager/scripts/config.example.json",
+      "hash": "27b08b83a99e77ddde65cff154d67580da441b5809e82443fcd510338c809c33",
+      "summary": "配置 root, lang, output_html, output_md。",
+      "type": "JSON config",
+      "module": "project-visual-map-manager",
+      "imports": [],
+      "declarations": [],
+      "exports": [],
+      "dependencies": [],
+      "referenced_by": [],
+      "routes": [],
+      "config_keys": [
+        "root",
+        "lang",
+        "output_html",
+        "output_md",
+        "max_depth",
+        "include_hidden",
+        "ignore"
+      ],
+      "last_analyzed": "2026-05-27T14:09:37+08:00"
+    },
+    "project-visual-map-manager/scripts/update_project_map.py": {
+      "path": "project-visual-map-manager/scripts/update_project_map.py",
+      "hash": "840e66e3c69f730a769344cd2cc3531fe36980db57e783e0c4bed906fba939ec",
+      "summary": "定义 Path, 文件路径 等路由或 API 行为。",
+      "type": "Python",
+      "module": "project-visual-map-manager",
+      "imports": [
+        "argparse",
+        "datetime as dt",
+        "fnmatch",
+        "hashlib",
+        "html",
+        "json",
+        "os",
+        "re",
+        "__future__",
+        "pathlib",
+        "typing"
+      ],
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "now_iso"
+        },
+        {
+          "kind": "function",
+          "name": "normalize_rel"
+        },
+        {
+          "kind": "function",
+          "name": "sha256_file"
+        },
+        {
+          "kind": "function",
+          "name": "is_hidden"
+        },
+        {
+          "kind": "function",
+          "name": "should_ignore"
+        },
+        {
+          "kind": "function",
+          "name": "is_probably_text"
+        },
+        {
+          "kind": "function",
+          "name": "read_text"
+        },
+        {
+          "kind": "function",
+          "name": "collect_files"
+        },
+        {
+          "kind": "function",
+          "name": "extract_comments"
+        },
+        {
+          "kind": "function",
+          "name": "unique"
+        },
+        {
+          "kind": "function",
+          "name": "file_type"
+        },
+        {
+          "kind": "function",
+          "name": "module_name"
+        },
+        {
+          "kind": "function",
+          "name": "classify_role"
+        },
+        {
+          "kind": "function",
+          "name": "extract_imports"
+        },
+        {
+          "kind": "function",
+          "name": "extract_exports"
+        },
+        {
+          "kind": "function",
+          "name": "extract_declarations"
+        },
+        {
+          "kind": "function",
+          "name": "extract_routes"
+        },
+        {
+          "kind": "function",
+          "name": "extract_config_keys"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_file"
+        },
+        {
+          "kind": "function",
+          "name": "resolve_dependency"
+        },
+        {
+          "kind": "function",
+          "name": "detect_language"
+        },
+        {
+          "kind": "function",
+          "name": "analyze_project"
+        },
+        {
+          "kind": "function",
+          "name": "make_ai_hint"
+        },
+        {
+          "kind": "function",
+          "name": "build_modules"
+        },
+        {
+          "kind": "function",
+          "name": "build_tree"
+        },
+        {
+          "kind": "function",
+          "name": "compact"
+        },
+        {
+          "kind": "function",
+          "name": "directory_lines"
+        },
+        {
+          "kind": "function",
+          "name": "walk"
+        },
+        {
+          "kind": "function",
+          "name": "render_markdown"
+        },
+        {
+          "kind": "function",
+          "name": "render_html"
+        }
+      ],
+      "exports": [],
+      "dependencies": [],
+      "referenced_by": [],
+      "routes": [
+        "Path",
+        "文件路径"
+      ],
+      "config_keys": [],
+      "last_analyzed": "2026-05-27T14:09:37+08:00"
+    },
+    "project-visual-map-manager/SKILL.md": {
+      "path": "project-visual-map-manager/SKILL.md",
+      "hash": "0256d181056d23600c6addf72fe6784328a74682eb0123cb93cdb667c2a9e4e5",
+      "summary": "Project Visual Map Manager",
+      "type": "Markdown",
+      "module": "project-visual-map-manager",
+      "imports": [],
+      "declarations": [],
+      "exports": [],
+      "dependencies": [],
+      "referenced_by": [],
+      "routes": [],
+      "config_keys": [],
+      "last_analyzed": "2026-05-27T14:09:37+08:00"
+    },
+    "project-visual-map-manager/templates/PROJECT_MAP.template.html": {
+      "path": "project-visual-map-manager/templates/PROJECT_MAP.template.html",
+      "hash": "f88171e8930f3b0920bd181a165c82ab6eb0992703e43cf2c954dd8cf8498cab",
+      "summary": "提供项目使用的 HTML 内容。",
+      "type": "HTML",
+      "module": "project-visual-map-manager",
+      "imports": [],
+      "declarations": [],
+      "exports": [],
+      "dependencies": [],
+      "referenced_by": [],
+      "routes": [],
+      "config_keys": [],
+      "last_analyzed": "2026-05-27T14:09:37+08:00"
+    },
+    "project-visual-map-manager/templates/PROJECT_STRUCTURE.template.md": {
+      "path": "project-visual-map-manager/templates/PROJECT_STRUCTURE.template.md",
+      "hash": "b7b89545b6a761fa8405c42f55d095635d37d2c3880ee0f7533302b76a2ffc2c",
+      "summary": "提供项目使用的 Markdown 内容。",
+      "type": "Markdown",
+      "module": "project-visual-map-manager",
+      "imports": [],
+      "declarations": [],
+      "exports": [],
+      "dependencies": [],
+      "referenced_by": [],
+      "routes": [],
+      "config_keys": [],
+      "last_analyzed": "2026-05-27T14:09:37+08:00"
+    }
+  }
+}

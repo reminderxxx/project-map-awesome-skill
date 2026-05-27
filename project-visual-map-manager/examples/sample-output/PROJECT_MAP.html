@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>project-map-awesome-skill Project Map</title>
+<style>
+:root { color-scheme: light; --bg:#f7f8fb; --panel:#ffffff; --ink:#172033; --muted:#667085; --line:#d9dee8; --accent:#1f7a8c; --accent2:#b23a48; --chip:#eef6f8; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); }
+header { padding:18px 24px; border-bottom:1px solid var(--line); background:var(--panel); position:sticky; top:0; z-index:2; }
+.top { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+h1 { margin:0; font-size:22px; line-height:1.2; letter-spacing:0; }
+.meta { display:flex; gap:10px; flex-wrap:wrap; color:var(--muted); font-size:13px; }
+.pill { background:var(--chip); color:#14525e; border:1px solid #cfe6eb; padding:4px 8px; border-radius:8px; }
+.controls { display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
+input, select { border:1px solid var(--line); border-radius:8px; padding:9px 10px; font-size:14px; background:#fff; color:var(--ink); }
+#search { min-width:320px; flex:1; }
+main { display:grid; grid-template-columns:minmax(280px, 34vw) 1fr; min-height:calc(100vh - 118px); }
+aside { border-right:1px solid var(--line); background:#fbfcfe; overflow:auto; padding:14px; }
+section { overflow:auto; padding:18px; }
+.tree ul { list-style:none; padding-left:18px; margin:0; }
+.tree > ul { padding-left:0; }
+.dir { margin:7px 0; font-weight:650; color:#344054; }
+.file { display:block; width:100%; text-align:left; border:0; background:transparent; color:var(--ink); padding:5px 7px; border-radius:6px; cursor:pointer; font-size:13px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.file:hover, .file.active { background:#e8f3f5; color:#0f5361; }
+.layout { display:grid; grid-template-columns:minmax(280px, 0.9fr) minmax(320px, 1.1fr); gap:16px; align-items:start; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; }
+.panel h2 { margin:0 0 10px; font-size:17px; }
+.panel h3 { margin:16px 0 8px; font-size:14px; color:#344054; }
+.summary { font-size:15px; line-height:1.5; }
+.kv { display:grid; grid-template-columns:104px 1fr; gap:8px 12px; font-size:13px; margin-top:12px; }
+.kv div:nth-child(odd) { color:var(--muted); }
+.kv div, .summary, .list, .chip { overflow-wrap:anywhere; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { border:1px solid var(--line); background:#f9fafb; padding:3px 7px; border-radius:999px; font-size:12px; }
+.list { margin:0; padding-left:18px; font-size:13px; line-height:1.55; }
+#tooltip { position:fixed; display:none; max-width:360px; background:#172033; color:#fff; padding:10px 12px; border-radius:8px; box-shadow:0 10px 24px rgba(16,24,40,.22); pointer-events:none; z-index:5; font-size:12px; line-height:1.45; }
+.graph-wrap { overflow:auto; }
+svg { width:100%; height:360px; background:#fbfcfe; border:1px solid var(--line); border-radius:8px; }
+.node { fill:#fff; stroke:#1f7a8c; stroke-width:1.4; }
+.node.selected { stroke:#b23a48; stroke-width:2.2; }
+.edge { stroke:#98a2b3; stroke-width:1.2; marker-end:url(#arrow); }
+.node-label { font-size:13px; fill:#172033; }
+.empty { color:var(--muted); font-size:13px; }
+@media (max-width: 900px) {
+  main, .layout { grid-template-columns:1fr; }
+  aside { border-right:0; border-bottom:1px solid var(--line); max-height:42vh; }
+  #search { min-width:100%; }
+}
+</style>
+</head>
+<body>
+<script id="project-data" type="application/json">{"project_name": "project-map-awesome-skill", "root": "C:\\Users\\48659\\Documents\\project-map-awesome-skill", "updated_at": "2026-05-27T14:09:37+08:00", "language": "zh", "file_count": 7, "module_count": 1, "files": {"project-visual-map-manager/README.md": {"path": "project-visual-map-manager/README.md", "hash": "40c91abf19d5de3906ab556f5e867bac6258cb8171525d74bce6bc85d03dad59", "type": "README", "module": "project-visual-map-manager", "imports": [], "exports": [], "declarations": [], "routes": [], "comments": ["project-visual-map-manager", "# Installation", "# Command Parameters", "# Output Files", "# Example Screenshot Description"], "config_keys": [], "line_count": 63, "last_analyzed": "2026-05-27T14:09:37+08:00", "roles": [], "dependencies": [], "summary": "project-visual-map-manager", "ai_hint": "当变更目标属于 project-visual-map-manager 模块时可从本文件定位。", "referenced_by": []}, "project-visual-map-manager/README.zh-CN.md": {"path": "project-visual-map-manager/README.zh-CN.md", "hash": "243f80641ae5f4a550dd821fd406e5b98930cccf26348ba157cfc26e1153e4e4", "type": "README", "module": "project-visual-map-manager", "imports": [], "exports": [], "declarations": [], "routes": [], "comments": ["project-visual-map-manager 中文说明", "# 输出文件说明", "# AI 使用建议", "# 默认忽略内容"], "config_keys": [], "line_count": 175, "last_analyzed": "2026-05-27T14:09:37+08:00", "roles": [], "dependencies": [], "summary": "project-visual-map-manager 中文说明", "ai_hint": "当变更目标属于 project-visual-map-manager 模块时可从本文件定位。", "referenced_by": []}, "project-visual-map-manager/scripts/config.example.json": {"path": "project-visual-map-manager/scripts/config.example.json", "hash": "27b08b83a99e77ddde65cff154d67580da441b5809e82443fcd510338c809c33", "type": "JSON config", "module": "project-visual-map-manager", "imports": [], "exports": [], "declarations": [], "routes": [], "comments": [], "config_keys": ["root", "lang", "output_html", "output_md", "max_depth", "include_hidden", "ignore"], "line_count": 33, "last_analyzed": "2026-05-27T14:09:37+08:00", "roles": ["config"], "dependencies": [], "summary": "配置 root, lang, output_html, output_md。", "ai_hint": "配置改动可能影响启动、构建或部署，修改前确认引用位置。", "referenced_by": []}, "project-visual-map-manager/scripts/update_project_map.py": {"path": "project-visual-map-manager/scripts/update_project_map.py", "hash": "840e66e3c69f730a769344cd2cc3531fe36980db57e783e0c4bed906fba939ec", "type": "Python", "module": "project-visual-map-manager", "imports": ["argparse", "datetime as dt", "fnmatch", "hashlib", "html", "json", "os", "re", "__future__", "pathlib", "typing"], "exports": [], "declarations": [{"kind": "function", "name": "now_iso"}, {"kind": "function", "name": "normalize_rel"}, {"kind": "function", "name": "sha256_file"}, {"kind": "function", "name": "is_hidden"}, {"kind": "function", "name": "should_ignore"}, {"kind": "function", "name": "is_probably_text"}, {"kind": "function", "name": "read_text"}, {"kind": "function", "name": "collect_files"}, {"kind": "function", "name": "extract_comments"}, {"kind": "function", "name": "unique"}, {"kind": "function", "name": "file_type"}, {"kind": "function", "name": "module_name"}, {"kind": "function", "name": "classify_role"}, {"kind": "function", "name": "extract_imports"}, {"kind": "function", "name": "extract_exports"}, {"kind": "function", "name": "extract_declarations"}, {"kind": "function", "name": "extract_routes"}, {"kind": "function", "name": "extract_config_keys"}, {"kind": "function", "name": "summarize_file"}, {"kind": "function", "name": "resolve_dependency"}, {"kind": "function", "name": "detect_language"}, {"kind": "function", "name": "analyze_project"}, {"kind": "function", "name": "make_ai_hint"}, {"kind": "function", "name": "build_modules"}, {"kind": "function", "name": "build_tree"}, {"kind": "function", "name": "compact"}, {"kind": "function", "name": "directory_lines"}, {"kind": "function", "name": "walk"}, {"kind": "function", "name": "render_markdown"}, {"kind": "function", "name": "render_html"}], "routes": ["Path", "文件路径"], "comments": ["([\\s\\S] ?)"], "config_keys": [], "line_count": 1167, "last_analyzed": "2026-05-27T14:09:37+08:00", "roles": ["controller", "service", "model/schema", "SQL/data", "main/entry", "route/api", "config"], "dependencies": [], "summary": "定义 Path, 文件路径 等路由或 API 行为。", "ai_hint": "修改路由或 API 行为时优先查看本文件，并同步检查 Path, 文件路径 的调用方。", "referenced_by": []}, "project-visual-map-manager/SKILL.md": {"path": "project-visual-map-manager/SKILL.md", "hash": "0256d181056d23600c6addf72fe6784328a74682eb0123cb93cdb667c2a9e4e5", "type": "Markdown", "module": "project-visual-map-manager", "imports": [], "exports": [], "declarations": [], "routes": [], "comments": ["Project Visual Map Manager", "# Required Workflow", "# Outputs", "# Updating PROJECT_STRUCTURE.md", "# Updating PROJECT_MAP.html", "# Parameters", "# Language Selection", "# Modification Rule For AI Agents"], "config_keys": [], "line_count": 80, "last_analyzed": "2026-05-27T14:09:37+08:00", "roles": [], "dependencies": [], "summary": "Project Visual Map Manager", "ai_hint": "当变更目标属于 project-visual-map-manager 模块时可从本文件定位。", "referenced_by": []}, "project-visual-map-manager/templates/PROJECT_MAP.template.html": {"path": "project-visual-map-manager/templates/PROJECT_MAP.template.html", "hash": "f88171e8930f3b0920bd181a165c82ab6eb0992703e43cf2c954dd8cf8498cab", "type": "HTML", "module": "project-visual-map-manager", "imports": [], "exports": [], "declarations": [], "routes": [], "comments": [], "config_keys": [], "line_count": 15, "last_analyzed": "2026-05-27T14:09:37+08:00", "roles": [], "dependencies": [], "summary": "提供项目使用的 HTML 内容。", "ai_hint": "当变更目标属于 project-visual-map-manager 模块时可从本文件定位。", "referenced_by": []}, "project-visual-map-manager/templates/PROJECT_STRUCTURE.template.md": {"path": "project-visual-map-manager/templates/PROJECT_STRUCTURE.template.md", "hash": "b7b89545b6a761fa8405c42f55d095635d37d2c3880ee0f7533302b76a2ffc2c", "type": "Markdown", "module": "project-visual-map-manager", "imports": [], "exports": [], "declarations": [], "routes": [], "comments": [], "config_keys": [], "line_count": 6, "last_analyzed": "2026-05-27T14:09:37+08:00", "roles": [], "dependencies": [], "summary": "提供项目使用的 Markdown 内容。", "ai_hint": "当变更目标属于 project-visual-map-manager 模块时可从本文件定位。", "referenced_by": []}}, "modules": {"project-visual-map-manager": {"name": "project-visual-map-manager", "files": ["project-visual-map-manager/README.md", "project-visual-map-manager/README.zh-CN.md", "project-visual-map-manager/SKILL.md", "project-visual-map-manager/scripts/config.example.json", "project-visual-map-manager/scripts/update_project_map.py", "project-visual-map-manager/templates/PROJECT_MAP.template.html", "project-visual-map-manager/templates/PROJECT_STRUCTURE.template.md"], "depends_on": []}}, "tree": {"name": "", "type": "dir", "children": [{"name": "project-visual-map-manager", "type": "dir", "children": [{"name": "scripts", "type": "dir", "children": [{"name": "config.example.json", "type": "file", "path": "project-visual-map-manager/scripts/config.example.json"}, {"name": "update_project_map.py", "type": "file", "path": "project-visual-map-manager/scripts/update_project_map.py"}]}, {"name": "templates", "type": "dir", "children": [{"name": "PROJECT_MAP.template.html", "type": "file", "path": "project-visual-map-manager/templates/PROJECT_MAP.template.html"}, {"name": "PROJECT_STRUCTURE.template.md", "type": "file", "path": "project-visual-map-manager/templates/PROJECT_STRUCTURE.template.md"}]}, {"name": "README.md", "type": "file", "path": "project-visual-map-manager/README.md"}, {"name": "README.zh-CN.md", "type": "file", "path": "project-visual-map-manager/README.zh-CN.md"}, {"name": "SKILL.md", "type": "file", "path": "project-visual-map-manager/SKILL.md"}]}]}}</script>
+
+<header>
+  <div class="top">
+    <div>
+      <h1>project-map-awesome-skill 项目地图</h1>
+      <div class="meta">
+        <span class="pill">更新时间: 2026-05-27T14:09:37+08:00</span>
+        <span class="pill">文件总数: 7</span>
+        <span class="pill">模块总数: 1</span>
+      </div>
+    </div>
+  </div>
+  <div class="controls">
+    <input id="search" type="search">
+    <select id="typeFilter"></select>
+  </div>
+</header>
+<main>
+  <aside class="tree" id="tree"></aside>
+  <section>
+    <div class="layout">
+      <div class="panel" id="details"></div>
+      <div class="panel">
+        <h2>依赖关系图</h2>
+        <div class="graph-wrap"><svg id="graph" role="img"></svg></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="tooltip"></div>
+
+<script>
+const data = JSON.parse(document.getElementById('project-data').textContent);
+const files = data.files;
+let selectedPath = Object.keys(files)[0] || null;
+
+const labels = data.language === 'en' ? {
+  search:'Search files, modules, routes, declarations',
+  allTypes:'All file types',
+  details:'File Details',
+  path:'Path',
+  type:'Type',
+  purpose:'Purpose',
+  module:'Module',
+  declarations:'Functions / Classes / Components',
+  exports:'Exports',
+  dependencies:'Depends on',
+  referencedBy:'Referenced by',
+  routes:'Interfaces / Routes / Config',
+  aiHint:'AI Location Advice',
+  graph:'Dependency Graph',
+  none:'None detected'
+} : {
+  search:'搜索文件、模块、路由、声明',
+  allTypes:'全部文件类型',
+  details:'文件详情',
+  path:'文件路径',
+  type:'文件类型',
+  purpose:'文件作用',
+  module:'所属模块',
+  declarations:'主要函数 / 类 / 组件',
+  exports:'主要导出内容',
+  dependencies:'依赖了哪些文件',
+  referencedBy:'被哪些文件引用',
+  routes:'相关接口 / 路由 / 配置',
+  aiHint:'AI 修改定位建议',
+  graph:'依赖关系图',
+  none:'未检测到'
+};
+
+function el(tag, attrs={}, children=[]) {
+  const node = document.createElement(tag);
+  Object.entries(attrs).forEach(([key, value]) => {
+    if (key === 'class') node.className = value;
+    else if (key === 'text') node.textContent = value;
+    else node.setAttribute(key, value);
+  });
+  children.forEach(child => node.appendChild(child));
+  return node;
+}
+
+function matches(info, query, type) {
+  if (type && info.type !== type) return false;
+  if (!query) return true;
+  const haystack = [
+    info.path, info.type, info.module, info.summary,
+    ...(info.routes || []), ...(info.exports || []),
+    ...(info.declarations || []).map(d => d.name)
+  ].join(' ').toLowerCase();
+  return haystack.includes(query.toLowerCase());
+}
+
+function visiblePaths() {
+  const query = document.getElementById('search').value.trim();
+  const type = document.getElementById('typeFilter').value;
+  return new Set(Object.values(files).filter(info => matches(info, query, type)).map(info => info.path));
+}
+
+function renderTreeNode(node, visible) {
+  if (node.type === 'file') {
+    if (!visible.has(node.path)) return null;
+    const info = files[node.path];
+    const button = el('button', {class:'file', text:node.name, 'data-path':node.path});
+    if (node.path === selectedPath) button.classList.add('active');
+    button.addEventListener('click', () => { selectedPath = node.path; renderAll(); });
+    button.addEventListener('mousemove', evt => showTip(evt, info));
+    button.addEventListener('mouseleave', hideTip);
+    return el('li', {}, [button]);
+  }
+  const children = (node.children || []).map(child => renderTreeNode(child, visible)).filter(Boolean);
+  if (!children.length && node.name) return null;
+  const list = el('ul', {}, children);
+  if (!node.name) return list;
+  return el('li', {}, [el('div', {class:'dir', text:node.name}), list]);
+}
+
+function showTip(evt, info) {
+  const tip = document.getElementById('tooltip');
+  const decls = (info.declarations || []).slice(0,5).map(d => d.name).join(', ') || labels.none;
+  tip.innerHTML = `<strong>${escapeHtml(info.path)}</strong><br>${escapeHtml(info.summary)}<br>${labels.declarations}: ${escapeHtml(decls)}<br>${labels.type}: ${escapeHtml(info.type)}<br>${labels.module}: ${escapeHtml(info.module)}`;
+  tip.style.display = 'block';
+  tip.style.left = Math.min(evt.clientX + 14, window.innerWidth - 380) + 'px';
+  tip.style.top = Math.min(evt.clientY + 14, window.innerHeight - 160) + 'px';
+}
+function hideTip(){ document.getElementById('tooltip').style.display = 'none'; }
+function escapeHtml(value){ return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
+
+function chips(values) {
+  const list = values && values.length ? values : [labels.none];
+  return el('div', {class:'chips'}, list.map(value => el('span', {class:'chip', text:value})));
+}
+
+function list(values) {
+  const items = values && values.length ? values : [labels.none];
+  return el('ul', {class:'list'}, items.map(value => el('li', {text:value})));
+}
+
+function renderDetails() {
+  const info = files[selectedPath];
+  const details = document.getElementById('details');
+  details.innerHTML = '';
+  if (!info) {
+    details.appendChild(el('p', {class:'empty', text:labels.none}));
+    return;
+  }
+  details.appendChild(el('h2', {text:labels.details}));
+  details.appendChild(el('p', {class:'summary', text:info.summary}));
+  const kv = el('div', {class:'kv'}, [
+    el('div', {text:labels.path}), el('div', {text:info.path}),
+    el('div', {text:labels.type}), el('div', {text:info.type}),
+    el('div', {text:labels.module}), el('div', {text:info.module}),
+    el('div', {text:'Lines'}), el('div', {text:String(info.line_count)})
+  ]);
+  details.appendChild(kv);
+  details.appendChild(el('h3', {text:labels.declarations}));
+  details.appendChild(chips((info.declarations || []).map(d => `${d.kind}: ${d.name}`)));
+  details.appendChild(el('h3', {text:labels.exports}));
+  details.appendChild(chips(info.exports || []));
+  details.appendChild(el('h3', {text:labels.dependencies}));
+  details.appendChild(list(info.dependencies || []));
+  details.appendChild(el('h3', {text:labels.referencedBy}));
+  details.appendChild(list(info.referenced_by || []));
+  details.appendChild(el('h3', {text:labels.routes}));
+  details.appendChild(chips([...(info.routes || []), ...(info.config_keys || [])]));
+  details.appendChild(el('h3', {text:labels.aiHint}));
+  details.appendChild(el('p', {class:'summary', text:info.ai_hint}));
+}
+
+function renderGraph() {
+  const info = files[selectedPath];
+  const svg = document.getElementById('graph');
+  svg.innerHTML = '<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#98a2b3"/></marker></defs>';
+  if (!info) return;
+  const related = Array.from(new Set([...(info.dependencies || []), info.path, ...(info.referenced_by || [])])).slice(0, 18);
+  const width = 640, height = 330, cx = width / 2, cy = height / 2;
+  const positions = {};
+  positions[info.path] = {x:cx, y:cy};
+  const others = related.filter(path => path !== info.path);
+  others.forEach((path, index) => {
+    const angle = (Math.PI * 2 * index / Math.max(others.length, 1)) - Math.PI / 2;
+    positions[path] = {x:cx + Math.cos(angle) * 220, y:cy + Math.sin(angle) * 105};
+  });
+  svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+  related.forEach(path => {
+    const source = files[path];
+    if (!source) return;
+    (source.dependencies || []).forEach(dep => {
+      if (!positions[dep]) return;
+      const a = positions[path], b = positions[dep];
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
+      line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
+      line.setAttribute('class', 'edge');
+      svg.appendChild(line);
+    });
+  });
+  related.forEach(path => {
+    const p = positions[path];
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('cx', p.x); circle.setAttribute('cy', p.y); circle.setAttribute('r', path === info.path ? 34 : 28);
+    circle.setAttribute('class', path === info.path ? 'node selected' : 'node');
+    circle.addEventListener('click', () => { selectedPath = path; renderAll(); });
+    svg.appendChild(circle);
+    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    text.setAttribute('x', p.x); text.setAttribute('y', p.y + 48);
+    text.setAttribute('text-anchor', 'middle'); text.setAttribute('class', 'node-label');
+    text.textContent = shortLabel(path);
+    svg.appendChild(text);
+  });
+}
+
+function shortLabel(path) {
+  const parts = path.split('/');
+  const label = parts[parts.length - 1] || path;
+  return label.length > 24 ? '...' + label.slice(-21) : label;
+}
+
+function renderAll() {
+  const visible = visiblePaths();
+  if (!visible.has(selectedPath)) selectedPath = Array.from(visible)[0] || Object.keys(files)[0] || null;
+  const tree = document.getElementById('tree');
+  tree.innerHTML = '';
+  tree.appendChild(renderTreeNode(data.tree, visible) || el('p', {class:'empty', text:labels.none}));
+  renderDetails();
+  renderGraph();
+}
+
+function initControls() {
+  document.getElementById('search').setAttribute('placeholder', labels.search);
+  const select = document.getElementById('typeFilter');
+  select.appendChild(el('option', {value:'', text:labels.allTypes}));
+  Array.from(new Set(Object.values(files).map(info => info.type))).sort().forEach(type => {
+    select.appendChild(el('option', {value:type, text:type}));
+  });
+  document.getElementById('search').addEventListener('input', renderAll);
+  select.addEventListener('change', renderAll);
+}
+
+initControls();
+renderAll();
+</script>
+</body>
+</html>
